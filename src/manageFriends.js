@@ -3,13 +3,27 @@ export function manageFriends(state, action) {
   switch (action.type) {
     case "friends/add":
       return {
-        friends: [...state.friends, action.payload],
+        friends: [...state.friends, action.payload]
       }
-    case "friends/remove":
-      return {
-        friends: state.friends.filter((friend) => friend.id !== action.payload)
-      }
-    default:
-      return state;
+      case "friends/remove":
+        return {
+          friends: state.friends.filter((friend) => friend.id !== action.payload)
+        }
+        default:
+          return state;
   }
 }
+
+
+// switch (action.type) {
+//   case "friends/add":
+//     return {
+//       friends: [...state.friends, action.payload],
+//     }
+//   case "friends/remove":
+//     return {
+//       friends: state.friends.filter((friend) => friend.id !== action.payload)
+//     }
+//   default:
+//     return state;
+// }
